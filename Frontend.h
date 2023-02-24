@@ -9,6 +9,7 @@ private:
 public:
     Frontend(string nombre, int id, int rango, string frameworkPreferido, bool manejaBootstrap);
 
-    void imprimir();
+    void imprimir(); 
+
 };
 

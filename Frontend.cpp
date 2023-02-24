@@ -1,5 +1,6 @@
 #include "Frontend.h"
-    Frontend::Frontend(string nombre, int id, int rango, string frameworkPreferido, bool manejaBootstrap)
+
+   Frontend:: Frontend(string nombre, int id, int rango, string frameworkPreferido, bool manejaBootstrap)
         : Developer(nombre, id, rango) {
         this->frameworkPreferido = frameworkPreferido;
         this->manejaBootstrap = manejaBootstrap;

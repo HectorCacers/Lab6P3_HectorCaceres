@@ -8,6 +8,6 @@ private:
 
 public:
     Backend(string nombre, int id, int rango, bool manejaSql, bool manejaNoSql);
-    void imprimir();
+    void imprimir(); 
 };
 

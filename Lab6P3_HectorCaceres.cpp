@@ -26,35 +26,101 @@ int main()
 		cin >> op;
 
 		cout << "\n\n" << endl;
-		vector<Developer*> trabajadores;
+		vector<Developer*> trabajadores; // vector de punteros a Developer
 		switch (op) {
 
-		case 1:
-			
+		case 1: {
+			int opcion = 0;
 
-			// crear algunos desarrolladores de ejemplo
-			Developer* d1 = new Backend("Luis Flores", 12099001, 3, true, false);
-			Developer* d2 = new Frontend("Daniel Sagastume", 12145661, 1, "Angular", false);
-			Developer* d3 = new Backend("Juan Pérez", 13001234, 2, true, true);
-			Developer* d4 = new Frontend("María González", 13148765, 3, "React", true);
+			while (opcion != 3) {
+				// mostrar menú principal
+				cout << "MENU Programadores" << endl;
+				cout << "1. Agregar Programador" << endl;
+				cout << "2. Imprimir Programadores" << endl;
+				cout << "3. Salir" << endl;
+				cout << "Seleccione una opcion: ";
+				cin >> opcion;
 
-			// agregar los desarrolladores al vector
-			trabajadores.push_back(d1);
-			trabajadores.push_back(d2);
-			trabajadores.push_back(d3);
-			trabajadores.push_back(d4);
+				if (opcion == 1) {
+					int opcion2 = 0;
+					while (opcion2 != 3) {
+						// mostrar menú para agregar desarrolladores
+						cout << "Agregar Programador" << endl;
+						cout << "1. Programador Frontend" << endl;
+						cout << "2. Programador Backend" << endl;
+						cout << "3. Salir" << endl;
+						cout << "Seleccione una opcion: ";
+						cin >> opcion2;
 
-			// imprimir la información de cada desarrollador en el vector
-			for (Developer* d : trabajadores) {
-				d->imprimir();
+						if (opcion2 == 1) {
+							// agregar un desarrollador Frontend
+							string nombre;
+							int id, rango;
+							string framework;
+							bool manejaBootstrap;
+
+							cout << "Nombre: ";
+							cin.ignore();
+							getline(cin, nombre);
+							cout << "ID: ";
+							cin >> id;
+							cout << "Rango (1: Junior, 2: Medium, 3: Senior): ";
+							cin >> rango;
+							cout << "Framework de preferencia: ";
+							cin.ignore();
+							getline(cin, framework);
+							cout << "Maneja Bootstrap (0: No, 1: Si): ";
+							cin >> manejaBootstrap;
+
+							trabajadores.push_back(new Frontend(nombre, id, rango, framework, manejaBootstrap));
+
+							cout << "Programador Frontend agregado correctamente" << endl;
+						}
+						else if (opcion2 == 2) {
+							// agregar un desarrollador Backend
+							string nombre;
+							int id, rango;
+							bool manejaSql, manejaNoSql;
+
+							cout << "Nombre: ";
+							cin.ignore();
+							getline(cin, nombre);
+							cout << "ID: ";
+							cin >> id;
+							cout << "Rango (1: Junior, 2: Medium, 3: Senior): ";
+							cin >> rango;
+							cout << "Maneja SQL (0: No, 1: Si): ";
+							cin >> manejaSql;
+							cout << "Maneja NoSQL (0: No, 1: Si): ";
+							cin >> manejaNoSql;
+
+							trabajadores.push_back(new Backend(nombre, id, rango, manejaSql, manejaNoSql));
+
+							cout << "Programador Backend agregado correctamente" << endl;
+						}
+						else {
+							cout << "Opcion no disponible" << endl;
+						}
+					}
+				}
+				else if (opcion == 2) {
+					// imprimir la información de cada desarrollador en el vector
+					for (Developer* d : trabajadores) {
+						d->imprimir();
+					}
+				}
+				else {
+					cout << "Opcion no disponible" << endl;
+				}
 			}
 
 			// liberar la memoria asignada a los objetos de Developer
 			for (Developer* d : trabajadores) {
 				delete d;
 			}
-			return 0;
 			break;
+		}
+			
 		case 2:
 			break;
 		case 3:
@@ -68,13 +134,11 @@ int main()
 		cout << "\n\n" << endl;
 	}
 
-
-
 	cout << "\n\n" << endl;
 
 	system("PAUSE");
 	return 0;
 }
 
-		
-	
+
+
