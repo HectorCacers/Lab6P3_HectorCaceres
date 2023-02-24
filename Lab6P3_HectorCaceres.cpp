@@ -7,6 +7,11 @@
 #include "Backend.h"
 #include "Developer.h"
 #include "Frontend.h"
+#include "AdminAvion.h"
+#include "AvionCessna172.h"
+#include "AvionBoeing737.h"
+#include "AvionA340.h"
+
 using namespace std;
 int main()
 {
@@ -120,9 +125,87 @@ int main()
 			}
 			break;
 		}
+
+		case 2: {
+			AdminAvion admin;
+			int opcion;
+			do {
+				cout << "1. Agregar Avion al final de la lista." << endl;
+				cout << "2. Enceder motores del avion al inicio." << endl;
+				cout << "3. Acelerar motores del avion al inicio." << endl;
+				cout << "4. Desacelerar motores del avion al inicio." << endl;
+				cout << "5. Apagar motores del avion inicio." << endl;
+				cout << "6. Despegar avion al inicio." << endl;
+				cout << "7. Imprimir estado de los motores del primer avion." << endl;
+				cout << "8. Salir." << endl;
+				cout << "Ingrese una opcion: ";
+				cin >> opcion;
+				switch (opcion) {
+				case 1: {
+					int opcion;
+					cout << "Cual avion desea agregar?" << endl;
+					cout << "1. Avion A340" << endl;
+					cout << "2. Avion Boeing 737" << endl;
+					cout << "3. Avion Cessna 172" << endl;
+					cout << "4. Salir" << endl;
+					cout << "Ingrese una opcion: ";
+					cin >> opcion;
+					switch (opcion) {
+					case 1: {
+						int numAsientos;
+						cout << "Ingrese el numero de asientos: ";
+						cin >> numAsientos;
+						Avion* avionA340 = new AvionA340(numAsientos);
+						admin.agregarAvion(avionA340);
+						break;
+					}
+					case 2: {
+						int numAsientos;
+						cout << "Ingrese el numero de asientos: ";
+						cin >> numAsientos;
+						Avion* avionBoeing737 = new AvionBoeing737(numAsientos);
+						admin.agregarAvion(avionBoeing737);
+						break;
+					}
+					case 3: {
+						int numAsientos;
+						cout << "Ingrese el numero de asientos: ";
+						cin >> numAsientos;
+						Avion* avionCessna172 = new AvionCessna172(numAsientos);
+						admin.agregarAvion(avionCessna172);
+						break;
+					}
+					case 4:
+						break;
+					}
+					break;
+				}
+				case 2:
+					admin.encenderMotoresAvionInicio();
+					break;
+				case 3:
+					admin.acelerarMotoresAvionInicio();
+					break;
+				case 4:
+					admin.desacelerarMotoresAvionInicio();
+					break;
+				case 5:
+					admin.apagarMotoresAvionInicio();
+					break;
+				case 6:
+					admin.despegarAvionInicio();
+					break;
+				case 7:
+					admin.imprimirEstadoMotoresPrimerAvion();
+					break;
+				case 8:
+					break;
+				}
+			} while (opcion != 8);
 			
-		case 2:
-			break;
+		}
+
+			  break;
 		case 3:
 			cout << "SALIENDO...." << endl;
 			break;

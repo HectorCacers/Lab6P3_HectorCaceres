@@ -27,6 +27,21 @@
     <ClCompile Include="Frontend.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AdminAvion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Avion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AvionA340.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AvionBoeing737.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AvionCessna172.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Developer.h">
@@ -36,6 +51,21 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Frontend.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AdminAvion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Avion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AvionA340.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AvionBoeing737.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AvionCessna172.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

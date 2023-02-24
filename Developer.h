@@ -13,7 +13,7 @@ protected:
 
 public:
 	Developer(string nombre, int id, int rango);
-	virtual void imprimir() = 0; // método virtual puro que imprime la información del desarrollador
+	virtual void imprimir() = 0; // metodo virtual puro que imprime la informacion del desarrollador
 
 };
 
