@@ -7,9 +7,7 @@ private:
     bool manejaNoSql; // indica si el desarrollador maneja NoSQL
 
 public:
-    Backend(string nombre, int id, int rango, bool manejaSql, bool manejaNoSql)
-        : Developer(nombre, id, rango);
-
+    Backend(string nombre, int id, int rango, bool manejaSql, bool manejaNoSql);
     void imprimir();
 };
 

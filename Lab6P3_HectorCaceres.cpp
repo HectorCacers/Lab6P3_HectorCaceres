@@ -4,7 +4,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include "Backend.h"
+#include "Developer.h"
+#include "Frontend.h"
 using namespace std;
 int main()
 {
@@ -24,10 +26,34 @@ int main()
 		cin >> op;
 
 		cout << "\n\n" << endl;
-
+		vector<Developer*> trabajadores;
 		switch (op) {
 
 		case 1:
+			
+
+			// crear algunos desarrolladores de ejemplo
+			Developer* d1 = new Backend("Luis Flores", 12099001, 3, true, false);
+			Developer* d2 = new Frontend("Daniel Sagastume", 12145661, 1, "Angular", false);
+			Developer* d3 = new Backend("Juan Pérez", 13001234, 2, true, true);
+			Developer* d4 = new Frontend("María González", 13148765, 3, "React", true);
+
+			// agregar los desarrolladores al vector
+			trabajadores.push_back(d1);
+			trabajadores.push_back(d2);
+			trabajadores.push_back(d3);
+			trabajadores.push_back(d4);
+
+			// imprimir la información de cada desarrollador en el vector
+			for (Developer* d : trabajadores) {
+				d->imprimir();
+			}
+
+			// liberar la memoria asignada a los objetos de Developer
+			for (Developer* d : trabajadores) {
+				delete d;
+			}
+			return 0;
 			break;
 		case 2:
 			break;
